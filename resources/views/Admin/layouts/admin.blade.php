@@ -193,32 +193,11 @@
                 <!-- <i class="right fa fa-angle-left"></i> -->
               </p>
             </a>
-            <!-- <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul> -->
           </li>
 
-          <li class="nav-header">Sale</li>
-         
+          <li class="nav-header">Stock</li>
           <li class="nav-item ">
-            <a href="{{URL::to('/saleMotorcycle')}}" class="nav-link">
+            <a href="{{URL::to('/stockMotorcycle')}}" class="nav-link">
               <!-- <i class="nav-icon fa fa-table"></i> -->
               <i class="nav-icon fa fa-pie-chart"></i>
               <p>
@@ -229,7 +208,7 @@
             
           </li>
           <li class="nav-item ">
-            <a href="#" class="nav-link">
+            <a href="{{URL::to('/stockParts')}}" class="nav-link">
               <!-- <i class="nav-icon fa fa-table"></i> -->
               <i class="nav-icon fa fa-pie-chart"></i>
               <p>
@@ -239,87 +218,65 @@
             </a>
             
           </li>
-          <li class="nav-item ">
-            <a href="#" class="nav-link">
-              <!-- <i class="nav-icon fa fa-table"></i> -->
-              <i class="nav-icon fa fa-pie-chart"></i>
-              <p>
-                Sold Motorcycles
-                <!-- <i class="fa fa-angle-left right"></i> -->
-              </p>
-            </a>
-            
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <!-- <i class="nav-icon fa fa-table"></i> -->
-              <i class="nav-icon fa fa-pie-chart"></i>
-              <p>
-                Sold Parts
-                <!-- <i class="fa fa-angle-left right"></i> -->
-              </p>
-            </a>
-            
-          </li>
-          <li class="nav-header">Service</li>
-         
+          
+          <li class="nav-header">Discount</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <!-- <i class="nav-icon fa fa-table"></i> -->
               <i class="nav-icon fa fa-tree"></i>
              
               <p>
-                Free
+                Add Discount
                 <!-- <i class="fa fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
-          <li class="nav-item">
+          
+
+          <li class="nav-header">Information</li>
+          <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <!-- <i class="nav-icon fa fa-table"></i> -->
-              <i class="nav-icon fa fa-tree"></i>
+              <i class="nav-icon fa fa-edit"></i>
               <p>
-                Paid
+                Branches
+                <!-- <i class="fa fa-angle-left right"></i> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-edit"></i>
+              <p>
+                Motorcycle Name
+                <!-- <i class="fa fa-angle-left right"></i> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-edit"></i>
+              <p>
+                Model
+                <!-- <i class="fa fa-angle-left right"></i> -->
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-edit"></i>
+              <p>
+                Types
                 <!-- <i class="fa fa-angle-left right"></i> -->
               </p>
             </a>
           </li>
 
-          <li class="nav-header">Pre-Booking</li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-edit"></i>
-              <p>
-                Book
-                <!-- <i class="fa fa-angle-left right"></i> -->
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-edit"></i>
-              <p>
-                List
-                <!-- <i class="fa fa-angle-left right"></i> -->
-              </p>
-            </a>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-edit"></i>
-              <p>
-                Sales
-                <!-- <i class="fa fa-angle-left right"></i> -->
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-header">Distribution</li>
+          <li class="nav-header">Customer</li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-table"></i>
               <p>
-                Distribute
+                Customer info.
                 <!-- <i class="fa fa-angle-left right"></i> -->
               </p>
             </a>
@@ -339,7 +296,7 @@
 
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
-            <b>Version</b> 2.4.0
+            <b>Admin</b>
             </div>
             <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
             reserved.
@@ -386,5 +343,9 @@
 <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
+<!-- ChartJS 1.0.2 -->
+<script src="{{ asset('plugins/chartjs-old/Chart.min.js') }}"></script>
+
+<script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script>
 </body>
 </html>

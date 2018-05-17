@@ -14,6 +14,11 @@
 Route::get('/', function () {
     return view('login');
 });
-
+Route::get('/admin', function () {
+    return view('Admin/index');
+});
+Route::get('/customer', function () {
+    return view('Customer/index');
+});
 Route::post('/loginManager', 'LoginController@login_manager');
 Route::get('/index', 'LoginController@index');
