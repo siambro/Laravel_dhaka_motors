@@ -12,7 +12,7 @@
       <p class="login-box-msg">Sign in to start your session</p>
 
       <form role="form" action="{{ url('loginManager') }}" method="POST">
-		{{ csrf_field() }}
+		  {{ csrf_field() }}
         <div class="form-group has-feedback">
           <input type="text" name="user_name" class="form-control" placeholder="User Name" required>
           
@@ -22,14 +22,14 @@
           <input type="password" name="pass" class="form-control" placeholder="Password" required>
           
         </div>
-		<p style="color:red">
-			<?php $exception=Session::get('exception');
-				if($exception){
-					echo $exception;
-					Session::put('exception', null);
-				}
-			?>
-		</p>
+        <p style="color:red">
+          <?php $exception=Session::get('exception');
+            if($exception){
+              echo $exception;
+              Session::put('exception', null);
+            }
+          ?>
+        </p>
         <div class="row">
           <div class="col-8">
             <div class="checkbox icheck">

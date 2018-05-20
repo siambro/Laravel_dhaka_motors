@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use DB;
 use Session;
 session_start();
+
 class LoginController extends Controller
 {
     //
