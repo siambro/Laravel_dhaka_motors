@@ -31,6 +31,11 @@ Route::get('/discount', function () {
 Route::get('/customer', function () {
     return view('Customer/index');
 });
+
+Route::get('/saleMotorcycle', function () {
+    return view('Manager/saleMotorcycle');
+});
+
 Route::post('/loginManager', 'LoginController@login_manager');
 Route::get('/index', 'LoginController@index');
 
@@ -47,4 +52,11 @@ Route::get('/discount', 'AdminController@discount');
 Route::post('/add_discount', 'AdminController@add_discount');
 Route::get('/discount', 'AdminController@view_discount');
 
+Route::get('/saleMotorcycle', 'ManagerController@saleMotorcycle');
+Route::post('/sale_m', 'ManagerController@sale_m');
+Route::get('/saleMotorcycle', 'ManagerController@view_motorcycle');
+
+Route::get('/saleParts', 'ManagerController@saleParts');
+Route::post('/sale_p', 'ManagerController@sale_p');
+Route::get('/saleParts', 'ManagerController@view_parts');
 

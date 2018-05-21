@@ -65,7 +65,7 @@ class AdminController extends Controller
         DB::table('stock')->insert($data);
 
         $data=array();
-        $data['type']=$req->type;
+        // $data['type']=$req->type;
         $data['name']=$req->name;
         $data['price']=$req->u_price;
         $data['quantity']=$req->quantity;

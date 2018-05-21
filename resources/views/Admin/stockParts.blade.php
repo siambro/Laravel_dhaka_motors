@@ -103,7 +103,7 @@
                 <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Type</th>
+                  <!-- <th>Type</th> -->
                   <th>Name</th>
                   <th>Unit Price</th>
                   <th>Quantity</th>
@@ -113,7 +113,7 @@
                 @foreach($all_parts_info as $v_parts)
                 <tr>
                   <td>{{$v_parts->id}}</td>
-                  <td>{{$v_parts->type}}</td>
+                  
                   <td>{{$v_parts->name}}</td>
                  
                   <td>{{$v_parts->price}}</td>
