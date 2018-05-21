@@ -47,13 +47,19 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="{{ asset('plugins/datatables/dataTables.bootstrap4.min.css') }}">
 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini ">
 
-    <div class="wrapper">
+  <div class="wrapper">
     <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -178,7 +184,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{URL::to('/index')}}" class="brand-link">
+    <a href="{{URL::to('/admin')}}" class="brand-link">
       <!-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8"> -->
       <span class="brand-text font-weight-light">Dhaka Motors</span>
@@ -202,7 +208,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
-            <a href="{{URL::to('/index')}}" class="nav-link ">
+            <a href="{{URL::to('/admin')}}" class="nav-link ">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
                 Dashboard
@@ -345,7 +351,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- datepicker -->
-<script src="{{ asset('plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+<!-- <script src="{{ asset('plugins/datepicker/bootstrap-datepicker.js') }}"></script> -->
 <!-- Bootstrap WYSIHTML5 -->
 <script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
 <!-- Slimscroll -->
@@ -376,6 +382,8 @@
 <!-- DataTables -->
 <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+
 <script>
   $(function () {
     //Initialize Select2 Elements
@@ -454,6 +462,45 @@
       "autoWidth": false
     });
   });
+</script>
+<script>
+  $( function() {
+    var dateFormat = "mm/dd/yy",
+      from = $( "#datepicker" )
+        .datepicker({
+					minDate: 1,
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#datepick" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
+</script>
+<script>
+$( function() {
+  $( "#datepicker2" ).datepicker({ minDate: "1", maxDate: "+1M +10D",dateFormat:"yy-mm-dd"});
+  } );
 </script>
 </body>
 </html>

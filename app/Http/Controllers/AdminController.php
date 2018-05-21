@@ -89,6 +89,42 @@ class AdminController extends Controller
 
     }
 
+    //Discount
+    public function discount(){
+        return view('Admin.discount');
+    }
+
+    public function add_discount(Request $req){
+
+        // $data=array();
+        // $data['user_id']=1;
+        
+        // DB::table('stock')->insert($data);
+
+        $data=array();
+        $data['from']=$req->from;
+        $data['to']=$req->to;
+        $data['percentage']=$req->percentage;
+        // $data['quantity']=$req->quantity;
+        
+        $data['user_id']= 1;
+
+        
+        DB::table('discount')->insert($data);
+
+        Session::put('message','Successfully added Discount!');
+        return Redirect::to('/discount');
+    }
+    
+    public function view_discount(){
+       // return view('Admin.stockMotorcycle');
+        $all_discount=DB::table('discount')
+        // ->where(['cc'=>160])
+        ->get();
+        $manage=view('Admin.discount')->with('all_discount_info', $all_discount);
+        return view('Admin.layouts.admin')->with('alldiscount',$manage);
+
+    }
 
 
 

@@ -41,6 +41,10 @@ Route::get('/stockMotorcycle', 'AdminController@view_stockMotorcycle');
 Route::get('/stockParts', 'AdminController@stockParts');
 Route::post('/stock_p', 'AdminController@stock_p');
 Route::get('/stockParts', 'AdminController@view_stockParts');
-
-
 Route::post('/stockParts', 'AdminController@stockParts');
+
+Route::get('/discount', 'AdminController@discount');
+Route::post('/add_discount', 'AdminController@add_discount');
+Route::get('/discount', 'AdminController@view_discount');
+
+
