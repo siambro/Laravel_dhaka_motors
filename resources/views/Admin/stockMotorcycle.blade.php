@@ -37,14 +37,21 @@
     <?php
       }
     ?>
-      <p style="color:green">
-        <?php $exception=Session::get('message');
-          if($exception){
+
+    <?php $exception=Session::get('delete');
+      if($exception){?>
+      <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fa fa-check"></i> Alert!</h5>
+        <?php
             echo $exception;
-            Session::put('message', null);
-          }
-        ?>
-      </p>
+            Session::put('delete', null);
+         ?>
+      </div>
+    <?php
+      }
+    ?>
+      
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
@@ -155,9 +162,9 @@
               <table id="example1" class="table table-hover table-striped">
                 <thead>
                 <tr>
-                  <th>ID</th>
+                  <!-- <th>ID</th> -->
                   <th>Name</th>
-                  <th>Type</th>
+                  <!-- <th>Type</th> -->
                   <th>Model</th>
                   <th>Engine No</th>
                   <th>Chassis No</th>
@@ -169,9 +176,9 @@
 
                 @foreach($all_motorcycle_info as $v_motorcycle)
                 <tr>
-                  <td>{{$v_motorcycle->id}}</td>
+                  <!-- <td>{{$v_motorcycle->id}}</td> -->
                   <td>{{$v_motorcycle->name}}</td>
-                  <td>{{$v_motorcycle->type}}</td>
+                  <!-- <td>{{$v_motorcycle->type}}</td> -->
                   <td>{{$v_motorcycle->model}}</td>
                   <td>{{$v_motorcycle->engineNo}}</td>
                   <td>{{$v_motorcycle->chassisNo}}</td>
@@ -179,10 +186,10 @@
                   <td>{{$v_motorcycle->color}}</td>
                   <td>{{$v_motorcycle->price}}</td>
                   <td>
-                      <button type="button" class="btn btn-block btn-outline-info btn-sm">View</button>
+                  <a href="{{URL::to('/view_m/'.$v_motorcycle->id)}}"><button type="button" class="btn btn-block btn-outline-info btn-sm">View</button></a>
                   </td>
                   <td>
-                      <button type="button" class="btn btn-block btn-outline-danger btn-sm">Delete</button>
+                      <a href="{{URL::to('/delete_m/'.$v_motorcycle->id)}}"><button type="button" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('Are you sure want to Delete?')">Delete</button></a>
                   </td>
                 </tr>
                 @endforeach

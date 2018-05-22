@@ -101,7 +101,7 @@
                       <input type="text" class="form-control" name="nid" id="nid" placeholder="NID" required>
                     </div>
                     <div class="form-group">
-                      <button type="submit" class="btn btn-block btn-success"onclick="return confirm('Are you sure want to SALE?')">Sale</button>
+                      <button type="submit" class="btn btn-block btn-success" onclick="return confirm('Are you sure want to SALE?')">Sale</button>
                     </div>
                   </div>
                   </form>

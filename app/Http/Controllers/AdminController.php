@@ -126,6 +126,50 @@ class AdminController extends Controller
 
     }
 
+    //delete
+    public function delete_m($id){
+        
+        DB::table('motorcycle_stock')
+        ->where('id',$id)
+        -> delete();
+        
+        Session::put('delete','Successfully Deleted!');
+        return Redirect::to('/stockMotorcycle');
+
+        // return view('Admin.stockMotorcycle');
+        //  $all_discount=DB::table('discount')
+         // ->where(['cc'=>160])
+        //  ->get();
+        //  $manage=view('Admin.discount')->with('all_discount_info', $all_discount);
+        //  return view('Admin.layouts.admin')->with('alldiscount',$manage);
+ 
+     }
+
+     //view_m
+     public function view_m($id){
+        
+        // DB::table('motorcycle_stock')
+        // ->where('id',$id)
+        // -> delete();
+        
+        // Session::put('delete','Successfully Deleted!');
+        
+        // return view('Admin.view_m');
+
+        // return view('Admin.stockMotorcycle');
+         $one_m=DB::table('motorcycle_stock')
+         ->select('*')
+         ->where('id', $id)
+         ->first();
+
+        //  echo "</pre>";
+        //  print_r($one_m);
+        //  echo "</pre>";
+
+         $manage=view('Admin.view_m')->with('one_motorcycle', $one_m);
+         return view('Admin.layouts.admin')->with('alldiscount',$manage);
+ 
+     }
 
 
 

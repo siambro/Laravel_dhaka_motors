@@ -35,4 +35,12 @@ class LoginController extends Controller
 
         // print_r($result);
     }
+
+    //logout
+    public function logout(){
+        Session::put('userName', null);
+        Session::put('phone', null);
+        Session::put('id', null);
+        return Redirect::to('/');
+    }
 }

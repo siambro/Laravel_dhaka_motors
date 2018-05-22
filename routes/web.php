@@ -39,9 +39,13 @@ Route::get('/saleMotorcycle', function () {
 Route::post('/loginManager', 'LoginController@login_manager');
 Route::get('/index', 'LoginController@index');
 
+Route::get('/logout', 'LoginController@logout');
+
 Route::get('/stockMotorcycle', 'AdminController@stockMotorcycle');
 Route::post('/stock_m', 'AdminController@stock_m');
 Route::get('/stockMotorcycle', 'AdminController@view_stockMotorcycle');
+Route::get('/delete_m/{id}', 'AdminController@delete_m');
+Route::get('/view_m/{id}', 'AdminController@view_m');
 
 Route::get('/stockParts', 'AdminController@stockParts');
 Route::post('/stock_p', 'AdminController@stock_p');
