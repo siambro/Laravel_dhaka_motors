@@ -64,21 +64,25 @@ class ManagerController extends Controller
         // DB::table('stock')->insert($data);
 
         $data=array();
-        $data['phone']=$req->phone;
-        $data['name']=$req->name;
-        $data['email']=$req->email;
-        $data['nid']=$req->nid;
+
+        $data['id']=$req->p_id;
+        $data['quantity']=$req->quantity;
+        // $data['email']=$req->email;
+        // $data['nid']=$req->nid;
         // $data['chassisNo']=$req->chassisNo;
         // $data['cc']=$req->cc;
         // $data['color']=$req->color;
         // $data['price']=$req->price;
         // $data['stock_id']= 1;
-
         
-        DB::table('customer')->insert($data);
+         echo "</pre>";
+         print_r($data);
+         echo "</pre>";
+        
+        // DB::table('customer')->insert($data);
 
-        Session::put('message','Successfully added!');
-        return Redirect::to('/saleParts');
+        // Session::put('message','Successfully added!');
+        // return Redirect::to('/saleParts');
     }
     
     public function view_parts(){

@@ -34,7 +34,7 @@
                 </div> -->
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <form role="form" method="post" action="{{URL::to('/sale_m')}}"> 
+                  <form role="form" method="post" action="{{URL::to('/sale_p')}}"> 
                   {{ csrf_field() }}
                   <table id="example1" class="table table-hover table-striped">
                     <thead>
@@ -53,16 +53,16 @@
                     <tbody>
                     @foreach($all_parts_info as $v_parts)
                       <tr>
-                        <td width="5%"><input type="checkbox" name="id" class="flat-red" value="{{$v_parts->id}}" required></td>
+                        <td width="5%"><input type="checkbox" name="p_id[{{$v_parts->id}}]" class="flat-red" value="{{$v_parts->id}}" required></td>
                         
                         <td>{{$v_parts->name}}</td>
                         
                         <td>{{$v_parts->price}}</td>
-                        <td><input type="number" name="id" class="flat-red" max="{{$v_parts->quantity}}" min=1 required></td>
+                        <td><input type="number" name="quantity[{{$v_parts->id}}]" class="flat-red" max="{{$v_parts->quantity}}" min=1 required></td>
                       
                         
                       </tr>
-                      @endforeach
+                    @endforeach
                     </tbody>
                   </table>
                 </div>
