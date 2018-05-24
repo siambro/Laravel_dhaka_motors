@@ -24,21 +24,29 @@ class ManagerController extends Controller
         // DB::table('stock')->insert($data);
 
         $data=array();
+        $data['id']=$req->m_id;
         $data['phone']=$req->phone;
         $data['name']=$req->name;
         $data['email']=$req->email;
         $data['nid']=$req->nid;
-        // $data['chassisNo']=$req->chassisNo;
+        $data['password']=$req->phone;
         // $data['cc']=$req->cc;
         // $data['color']=$req->color;
         // $data['price']=$req->price;
         // $data['stock_id']= 1;
-
         
-        DB::table('customer')->insert($data);
+        echo "</pre>";
+        print_r($data);
+        echo "</pre>";
 
-        Session::put('message','Successfully added!');
-        return Redirect::to('/saleMotorcycle');
+        Schema::table('location', function(Blueprint $table){
+            $table->foreign('coordinate_id')->references('id')->on('coordinate');
+        });
+        
+        // DB::table('customer')->insert($data);
+
+        // Session::put('message','Successfully added!');
+        // return Redirect::to('/saleMotorcycle');
     }
     
     public function view_motorcycle(){
@@ -67,13 +75,6 @@ class ManagerController extends Controller
 
         $data['id']=$req->p_id;
         $data['quantity']=$req->quantity;
-        // $data['email']=$req->email;
-        // $data['nid']=$req->nid;
-        // $data['chassisNo']=$req->chassisNo;
-        // $data['cc']=$req->cc;
-        // $data['color']=$req->color;
-        // $data['price']=$req->price;
-        // $data['stock_id']= 1;
         
          echo "</pre>";
          print_r($data);

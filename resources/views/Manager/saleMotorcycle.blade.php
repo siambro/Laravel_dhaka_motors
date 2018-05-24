@@ -53,7 +53,7 @@
                     <tbody>
                     @foreach($all_motorcycle_info as $v_motorcycle)
                       <tr>
-                        <td width="5%"><input type="radio" name="id" class="flat-red" value="{{$v_motorcycle->id}}" required></td>
+                        <td width="5%"><input type="radio" name="m_id" class="flat-red" value="{{$v_motorcycle->id}}" required></td>
                         <!-- <td>{{$v_motorcycle->id}}</td> -->
                         <td>{{$v_motorcycle->name}}</td>
                         <!-- <td>{{$v_motorcycle->type}}</td> -->

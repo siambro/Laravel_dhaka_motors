@@ -50,6 +50,11 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
+@php
+  $userID=Session::get('id');
+  $info=DB::table('users')->where('id',$userID)->first();
+@endphp
+
 <body class="hold-transition sidebar-mini ">
 
     <div class="wrapper">
@@ -84,7 +89,7 @@
       <!-- Messages Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          SIAM
+        {{$info->name}}
         </a>
         
       </li>
@@ -94,7 +99,7 @@
           <i class="fa fa-th-large"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">SIAM</span>
+          <span class="dropdown-item dropdown-header">{{$info->name}}</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
             <i class="fa fa-envelope mr-2"></i> 4 new messages
