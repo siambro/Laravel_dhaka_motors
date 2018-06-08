@@ -64,3 +64,6 @@ Route::get('/saleParts', 'ManagerController@saleParts');
 Route::post('/sale_p', 'ManagerController@sale_p');
 Route::get('/saleParts', 'ManagerController@view_parts');
 
+
+// Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
